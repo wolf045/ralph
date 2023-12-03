@@ -1,0 +1,29 @@
+# Import necessary libraries
+import math
+
+# Define initial parameters
+distance = 45  # meters
+initial_speed = 375  # meters per second
+mass = 0.71  # kilograms
+angle = 90 # degrees
+
+# Convert angle to radians
+angle_rad = math.radians(angle)
+
+# Calculate time of flight using projectile motion formula
+time_of_flight = (distance * math.sin(angle_rad)) / (initial_speed * math.cos(angle_rad))
+
+# Calculate horizontal distance travelled
+horizontal_distance = distance * math.cos(angle_rad)
+
+# Calculate impact velocity
+impact_velocity = math.sqrt((initial_speed**2) - (2 * 9.81 * horizontal_distance))
+
+# Calculate kinetic energy at impact
+kinetic_energy = 0.5 * mass * (impact_velocity**2)
+
+# Print results
+print(f"Time of flight: {time_of_flight:.2f} seconds")
+print(f"Horizontal distance travelled: {horizontal_distance:.2f} meters")
+print(f"Impact velocity: {impact_velocity:.2f} meters per second")
+print(f"Kinetic energy at impact: {kinetic_energy:.2f} Joules"

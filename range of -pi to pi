@@ -1,0 +1,32 @@
+# Import libraries
+import math
+
+# Define variables
+mass = 0.71  # Mass of the bullet in kg
+velocity = 375  # Velocity of the bullet in m/s
+distance = 45  # Distance to target in meters
+angle = math.pi  # Angle of the shot in radians
+
+# Calculate initial kinetic energy
+initial_ke = 0.5 * mass * velocity**2
+
+# Calculate horizontal and vertical components of velocity
+vx = velocity * math.cos(angle)
+vy = velocity * math.sin(angle)
+
+# Calculate time of flight
+time_of_flight = 2 * vy / 9.81
+
+# Calculate horizontal distance traveled
+horizontal_distance = vx * time_of_flight
+
+# Check if the bullet hits the target within the specified range
+if horizontal_distance >= -math.pi and horizontal_distance <= math.pi:
+    print("The bullet hits the target!")
+else:
+    print("The bullet misses the target.")
+
+# Print additional information
+print(f"Initial kinetic energy: {initial_ke:.2f} J")
+print(f"Horizontal distance traveled: {horizontal_distance:.2f} m")
+print(f"Time of flight: {time_of_flight:.2f} s")
